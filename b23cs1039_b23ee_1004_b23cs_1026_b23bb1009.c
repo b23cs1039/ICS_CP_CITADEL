@@ -128,8 +128,8 @@ void multiply(){
 
     printf("Enter the elements of the second matrix such that each element in a row is separated by spaces and each row is in separate line.\n");
     
-    for(u=0;u<p;u++){
-        for(v=0;v<q;v++){
+    for(u=0;u<q;u++){
+        for(v=0;v<r;v++){
             scanf("%d",(*(second + u) + v));
         }
     }
@@ -359,41 +359,46 @@ void inv(){
     
     int fac;
     fac = determinant(o,only);
-
-    int cofact[o][o];
-    if(o==1) { cofact[0][0]=only[0][0]; }
-    else if(o==2) {
-         cofact[0][0]=  only[1][1];
-         cofact[0][1]= -only[1][0];
-         cofact[1][0]= -only[0][1];
-         cofact[1][1]=  only[0][0];
+    
+    if(fac==0){
+        printf("Inverse of this matrix doesn't exist as the determinant of this matrix is zero.\n");
     }
-    else if(o>2){
-        for(u=0;u<o;u++){
-            for(v=0;v<o;v++){
-                cofact[u][v] = subcofact(o,only,u,v);
+    else if(fac!=0){
+        int cofact[o][o];
+        if(o==1) { cofact[0][0]=only[0][0]; }
+        else if(o==2) {
+            cofact[0][0]=  only[1][1];
+            cofact[0][1]= -only[1][0];
+            cofact[1][0]= -only[0][1];
+            cofact[1][1]=  only[0][0];
+        }
+        else if(o>2){
+            for(u=0;u<o;u++){
+                for(v=0;v<o;v++){
+                    cofact[u][v] = subcofact(o,only,u,v);
+                }
             }
         }
-    }
-    int adj[o][o];
-    for(u=0;u<o;u++){
-        for(v=0;v<o;v++){
-            adj[u][v] = cofact[v][u];
+        int adj[o][o];
+        for(u=0;u<o;u++){
+            for(v=0;v<o;v++){
+                adj[u][v] = cofact[v][u];
+            }
         }
-    }
 
-    float inverse[o][o];
-    for(u=0;u<o;u++){
-        for(v=0;v<o;v++){
-            inverse[u][v] = adj[u][v]/(float)fac;
+        float inverse[o][o];
+        for(u=0;u<o;u++){
+            for(v=0;v<o;v++){
+                inverse[u][v] = adj[u][v]/(float)fac;
+            }
         }
-    }
-    printf("The inverse matrix of the matrix is\n");
-    for(u=0;u<o;u++){
-        for(v=0;v<o;v++){
-            printf("%.2f ",inverse[u][v]);
+        printf("The inverse matrix of the matrix is\n");
+        for(u=0;u<o;u++){
+            for(v=0;v<o;v++){
+                printf("%.2f ",inverse[u][v]);
+            }
+            printf("\n");
         }
-        printf("\n");
     }
 }
 
