@@ -73,6 +73,62 @@ Enter 1 if you want to perform another operation.
 
 Enter 0 if you want to exit.
 
+1
+
+Which operation of matrices do you want to perform?
+
+Enter 1 if you want to add two matrices.
+
+Enter 2 if you want to subtract two matrices
+
+Enter 3 if you want to multiply two matrices.
+
+Enter 4 if you want to find trace of a square matrix.
+
+Enter 5 if you want to find transpose of a matrix.
+
+Enter 6 if you want to find determinant of a square matrix.
+
+Enter 7 if you want to find cofactor matrix of a square matrix.
+
+Enter 8 if you want to find adjoint matrix of a square matrix.
+
+Enter 9 if you want to find inverse matrix of a square matrix.
+
+Enter 10 if you want to multiply a matrix with an integer.
+
+3
+
+NOTE: If you want to multiply two matrices then, the number of columns of the first matrix should be equal to the number of rows of the second matrix.
+
+Enter the number of rows and columns of the first matrix, separated by spaces: 2 3
+
+Enter the elements of the first matrix such that each element in a row is separated by spaces and each row is in separate line.
+
+1 3 1
+
+2 3 6
+
+Enter the number of rows and columns of the second matrix, separated by spaces: 4 3
+
+Enter the elements of the second matrix such that each element in a row is separated by spaces and each row is in separate line.
+
+3 4 5
+
+1 2 3
+
+2 3 1
+
+6 1 4
+
+Can't perform the multiplication of these matrices!
+
+Check the number of rows and columns of the matrices, they should satisfy the condition given in NOTE and try again.
+
+Do you want to perform another operation?
+
+Enter 1 if you want to perform another operation.
+
+Enter 0 if you want to exit.
+
 0
-
-
